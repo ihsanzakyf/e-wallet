@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Email</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Red+Rose:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link href="../assets/css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container max-w-[768px]">
+      <div
+        class="flex h-dvh flex-col items-center justify-center bg-green-50 p-4"
+      >
+        <div class="flex w-full flex-col">
+          <img
+            src="../assets/images/email-sent.svg"
+            alt="fingerprint"
+            class="h-[160px] w-full"
+          />
+
+          <div class="mb-5 mt-8 flex flex-col">
+            <h1 class="text-center text-lg font-semibold text-gray-900">
+              Konfirmasi Email
+            </h1>
+            <p class="text-center text-xs font-medium text-gray-400">
+              Silahkan cek inbox email Anda dan klik link yang kami kirim untuk
+              konfirmasi email Anda. Jika belum muncul tunggu beberapa menit
+              atau klik tombol ini
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2.5 text-sm font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+          >
+            <span
+              class="i-material-symbols-chevron-right-rounded text-icon-md"
+            ></span>
+            <span>Kirim Ulang</span>
+          </button>
+          <p
+            class="mt-3 text-center text-sm font-semibold text-brands-light-green hover:cursor-pointer"
+          >
+            Keluar
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

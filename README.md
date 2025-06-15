@@ -2,6 +2,16 @@
 
 A modern, responsive UI for an e-wallet application built using **Tailwind CSS**. This project is focused on clean design, utility-first styling, and ease of development with a live-reloading development server.
 
+## 🙌 About This Project
+
+I'm currently learning front-end slicing and layout implementation by building a modern e-wallet UI from a design reference. This project is part of my self-study journey to improve my HTML, CSS (Tailwind), and responsive design skills.
+
+You can check out my GitHub profile to see other projects I’m working on or find something that might help:
+
+🔗 [https://github.com/ihsanzakyf](https://github.com/ihsanzakyf)
+
+Feedback, suggestions, or contributions are very welcome!
+
 ## ✨ Features
 
 - Utility-first CSS using [Tailwind CSS](https://tailwindcss.com/)

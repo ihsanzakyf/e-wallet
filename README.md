@@ -12,10 +12,29 @@ A modern, responsive UI for an e-wallet application built using **Tailwind CSS**
 
 ## 📦 Project Structure
 
-├── src/
-│ └── input.css # Tailwind input CSS
-├── dist/
-│ └── assets/css/ # Output CSS after build
-├── index.html # Main HTML file
-├── package.json # Project metadata and scripts
-└── README.md # Project documentation
+e-wallet-ui/
+
+- **src/**
+
+  - `input.css` — Tailwind input CSS file
+
+- **dist/**
+
+  - **assets/**
+    - **css/**
+      - `main.css` — Output CSS after build
+
+- `index.html` — Main HTML file
+- `package.json` — Project metadata and scripts
+- `README.md` — Project documentation
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ihsanzakyf/e-wallet.git
+cd e-wallet
+```

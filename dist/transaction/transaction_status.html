@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transaction</title>
+    <title>Transaction Status</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,13 +39,16 @@
       <!-- ./ App Bar -->
 
       <div class="relative flex min-h-dvh flex-col gap-4 bg-green-50 pb-[80px]">
-        <div class="h-[260px] bg-brands-light-green"></div>
+        <div class="h-[260px] bg-rose-400"></div>
         <div class="absolute mt-[92px] flex w-full flex-col gap-10 p-4">
           <!-- Title -->
-          <div class="flex flex-col">
-            <h1 class="text-center text-lg font-semibold text-white">
-              Transaksi Berhasil Diproses
+          <div class="flex flex-col text-center">
+            <h1 class="text-lg font-semibold text-white">
+              Transaksi Kadaluarsa
             </h1>
+            <p class="text-sm text-white">
+              Anda sudah melewati batas waktu transaksi yang diharapkan
+            </p>
           </div>
           <!-- ./ Title -->
 
@@ -89,10 +92,8 @@
             type="button"
             class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2.5 text-sm font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
           >
-            <span
-              class="i-material-symbols-receipt-rounded text-icon-md"
-            ></span>
-            <span>Lihat Transaksi Lainnya</span>
+            <span class="i-material-symbols-help-rounded text-icon-md"></span>
+            <span>Butuh Bantuan?</span>
           </button>
           <!-- ./ Button Action -->
         </div>

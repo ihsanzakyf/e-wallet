@@ -1,10 +1,9 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transaction</title>
-
+    <title>Transaction Failed</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,29 +22,29 @@
     <div class="container max-w-[768px]">
       <!-- App Bar -->
       <div
-        class="fixed left-0 top-0 z-10 flex w-full items-center gap-5 bg-white p-4 text-gray-900"
+        class="fixed left-0 top-0 z-10 flex w-full items-center gap-4 bg-white p-5"
       >
-        <a
-          href="#"
-          class="duration-200 ease-in-out hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
-          onclick="history.back()"
-        >
+        <a href="" class="">
           <span
             class="i-material-symbols-arrow-left-alt-rounded block text-icon-md"
           ></span>
         </a>
+
         <p class="text-lg font-semibold">Status Transaksi</p>
       </div>
       <!-- ./ App Bar -->
 
-      <div class="relative flex min-h-dvh flex-col gap-4 bg-green-50 pb-[80px]">
-        <div class="h-[260px] bg-brands-light-green"></div>
+      <div class="relative flex min-h-dvh flex-col gap-4 bg-green-50 pb-[50px]">
+        <div class="h-[260px] bg-red-500"></div>
         <div class="absolute mt-[92px] flex w-full flex-col gap-10 p-4">
           <!-- Title -->
-          <div class="flex flex-col">
-            <h1 class="text-center text-lg font-semibold text-white">
-              Transaksi Berhasil Diproses
+          <div class="flex flex-col text-center">
+            <h1 class="text-lg font-semibold text-white">
+              Sistem Gagal Memproses Transaksi
             </h1>
+            <p class="text-sm text-white">
+              Dana sudah dikembalikan ke saldo Anda
+            </p>
           </div>
           <!-- ./ Title -->
 
@@ -62,18 +61,26 @@
                 <p class="text-xs text-gray-500">Kategori</p>
                 <p class="text-xs font-semibold text-gray-900">Uang Keluar</p>
               </div>
+            </div>
+            <div class="flex flex-col gap-2">
               <div class="flex justify-between">
                 <p class="text-xs text-gray-500">Penerima</p>
                 <p class="text-xs font-semibold text-gray-900">Ihsan Zaky F</p>
               </div>
+            </div>
+            <div class="flex flex-col gap-2">
               <div class="flex justify-between">
                 <p class="text-xs text-gray-500">Bank Penerima</p>
                 <p class="text-xs font-semibold text-gray-900">BCA</p>
               </div>
+            </div>
+            <div class="flex flex-col gap-2">
               <div class="flex justify-between">
                 <p class="text-xs text-gray-500">Nomor Rekening</p>
                 <p class="text-xs font-semibold text-gray-900">2397582398</p>
               </div>
+            </div>
+            <div class="flex flex-col gap-2">
               <div class="flex justify-between">
                 <p class="text-xs text-gray-500">Waktu Transaksi</p>
                 <p class="text-xs font-semibold text-gray-900">
@@ -82,17 +89,15 @@
               </div>
             </div>
           </div>
-          <!-- ./ Card Transaction Info -->
+          <!-- . /Card Transaction Info -->
 
           <!-- Button Action -->
           <button
             type="button"
             class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2.5 text-sm font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
           >
-            <span
-              class="i-material-symbols-receipt-rounded text-icon-md"
-            ></span>
-            <span>Lihat Transaksi Lainnya</span>
+            <span class="i-material-symbols-help-rounded text-icon-md"></span>
+            <span>Butuh Bantuan?</span>
           </button>
           <!-- ./ Button Action -->
         </div>

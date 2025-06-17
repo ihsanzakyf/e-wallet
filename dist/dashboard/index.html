@@ -34,7 +34,9 @@
                 alt="Avatar"
                 class="size-8"
               />
-              <span class="text-lg font-semibold text-gray-900">My Name</span>
+              <span class="text-lg font-semibold text-gray-900"
+                >Ihsan Zaky</span
+              >
             </a>
           </div>
           <!-- ./ Avatar + Name -->
@@ -45,10 +47,16 @@
             <div
               class="flex h-[165px] flex-col justify-between rounded-2xl bg-gradient-to-b from-brands-light-green to-emerald-400 p-5 text-white"
             >
-              <h1 class="font-brand text-2xl font-bold">Kusaku</h1>
+              <h1 class="font-brand text-2xl font-bold uppercase">Kusaku</h1>
               <h2 class="flex items-center gap-2 text-2xl font-medium">
-                <span>Rp. 52.000.000,00</span>
+                <span
+                  data-balance-value="Rp. 52.000.000,00"
+                  data-show-balance="true"
+                  id="balance"
+                  >Rp. 52.000.000,00</span
+                >
                 <button
+                  id="visibilityButton"
                   type="button"
                   class="i-material-symbols-visibility text-icon-lg"
                 ></button>
@@ -61,7 +69,8 @@
           <div class="mt-2 flex gap-3">
             <button
               type="button"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+              class="open inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-brands-light-green bg-transparent p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-brands-light-green hover:text-white focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-transparent disabled:text-gray-400"
+              data-modal-target="modal-topup"
             >
               <span
                 class="i-material-symbols-download-rounded text-icon-sm"
@@ -71,7 +80,8 @@
 
             <button
               type="button"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+              class="open inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+              data-modal-target="modal-transfer"
             >
               <span
                 class="i-material-symbols-upload-rounded text-icon-sm"
@@ -80,9 +90,7 @@
             </button>
           </div>
           <!-- ./ Card Action -->
-
           <!-- ./ Card Balance + Action -->
-
           <div>
             <div class="mt-8 rounded-[20px] bg-white p-2.5 shadow-md">
               <!-- Card Header -->
@@ -318,6 +326,422 @@
         </a>
       </div>
       <!-- ./ Navbar -->
+
+      <!-- Modal Top Up -->
+      <dialog
+        id="modal-topup"
+        class="m-0 size-full bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-lg open:flex open:max-h-none open:max-w-none open:flex-col open:justify-end"
+      >
+        <div class="flex flex-col">
+          <div class="flex justify-between px-6 pb-8">
+            <button
+              type="button"
+              class="invisible inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+            >
+              <span
+                class="i-material-symbols-chevron-left-rounded text-icon-sm"
+              ></span>
+              <span>Back</span>
+            </button>
+
+            <button
+              type="button"
+              class="close inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+              data-modal-target="modal-topup"
+            >
+              <span
+                class="i-material-symbols-close-rounded text-icon-sm"
+              ></span>
+              <span>Close</span>
+            </button>
+          </div>
+          <div class="flex flex-col gap-8 rounded-t-[36px] bg-white p-6">
+            <!-- Form Top Up -->
+            <form action="#" method="POST" class="flex flex-col gap-4">
+              <div>
+                <div class="relative">
+                  <input
+                    type="number"
+                    inputmode="numeric"
+                    class="peer w-full rounded-2xl border border-gray-400 p-3 ps-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-rose-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-100"
+                    placeholder="Nominal Rupiah"
+                  />
+
+                  <div
+                    class="absolute inset-y-0 start-0 flex items-center ps-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                  >
+                    <span
+                      class="i-material-symbols-account-balance-wallet"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+              >
+                <span
+                  class="i-material-symbols-send-rounded text-icon-sm"
+                ></span>
+                <span>Top Up</span>
+              </button>
+            </form>
+            <!-- ./ Form Top Up -->
+          </div>
+        </div>
+      </dialog>
+      <!-- ./ Modal Top Up -->
+
+      <!-- Modal Transfer -->
+      <dialog
+        id="modal-transfer"
+        class="m-0 size-full bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-lg open:flex open:max-h-none open:max-w-none open:flex-col open:justify-end"
+      >
+        <div class="flex flex-col">
+          <div class="flex justify-between px-6 pb-8">
+            <button
+              type="button"
+              class="invisible inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+              id="button-back-modal-content"
+              data-history-back="[]"
+            >
+              <span
+                class="i-material-symbols-chevron-left-rounded text-icon-sm"
+              ></span>
+              <span>Back</span>
+            </button>
+
+            <button
+              type="button"
+              class="close inline-flex items-center gap-2 rounded-xl bg-white p-2 text-xs font-semibold uppercase text-brands-light-green hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-200 disabled:text-gray-400"
+              data-modal-target="modal-transfer"
+            >
+              <span
+                class="i-material-symbols-close-rounded text-icon-sm"
+              ></span>
+              <span>Close</span>
+            </button>
+          </div>
+
+          <!-- Form Top Up -->
+          <div class="flex flex-col gap-8 rounded-t-[36px] bg-white p-6">
+            <!-- Section: Account Check -->
+            <div id="modal-content-account-check">
+              <!-- Logo + Search Contact Button -->
+              <form action="#" method="POST" class="flex w-full flex-col gap-4">
+                <div class="flex justify-between">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="../assets/images/logo-green.svg"
+                      alt="logo"
+                      class="h-5"
+                    />
+                  </div>
+                  <a
+                    href="#"
+                    class="text-sm font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                    onclick="showSearchContact()"
+                    >Cari Kontak</a
+                  >
+                </div>
+
+                <!-- Input + Button -->
+                <div>
+                  <div class="relative">
+                    <input
+                      type="text"
+                      class="peer w-full rounded-2xl border border-gray-400 p-3 pe-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-rose-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-100"
+                      placeholder="Masukan KUSAKU ID"
+                    />
+
+                    <div
+                      class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                    >
+                      <span
+                        class="i-material-symbols-search-rounded text-icon-md"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+                >
+                  <span
+                    class="i-material-symbols-search-rounded text-icon-sm"
+                  ></span>
+                  <span>Cek Rekening</span>
+                </button>
+                <!-- ./ Input + Button -->
+              </form>
+              <!-- ./ Logo + Search Contact Button -->
+            </div>
+            <!-- ./ Section: Account Check -->
+            <!-- Section: Search Contact -->
+            <div id="modal-content-search-contact" class="hidden">
+              <div class="flex w-full flex-col">
+                <div class="mb-2 flex flex-col gap-y-1.5">
+                  <div class="relative">
+                    <input
+                      type="text"
+                      id="my-input-text"
+                      class="peer w-full rounded-2xl border border-gray-400 p-3 pe-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-rose-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-100"
+                      placeholder="Cari nama orang / no rekening"
+                    />
+                    <div
+                      class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                    >
+                      <span class="i-material-symbols-search-rounded"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Items -->
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <span
+                      class="i-material-symbols-person-outline flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Ms. Johnathan Bergstrom</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >12131231231241</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2"
+                    ><span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div
+                  class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden"
+                >
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <span
+                      class="i-material-symbols-person-outline flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Roxanne Abernathy</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >3523241234324</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2"
+                    ><span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div
+                  class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden"
+                >
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <span
+                      class="i-material-symbols-person-outline flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Joyce Jacobi</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >1342342341234343234</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div
+                  class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden"
+                >
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <span
+                      class="i-material-symbols-person-outline flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Mattie Goyette</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >3424533534534534</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div
+                  class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden"
+                >
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <a
+                  href="#"
+                  class="flex justify-between rounded-2xl p-3 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  onclick="showInputNominal()"
+                >
+                  <!-- Left -->
+                  <span class="flex items-center gap-5">
+                    <span
+                      class="i-material-symbols-person-outline flex-shrink-0 text-icon-lg text-brands-light-green"
+                    ></span>
+                    <span class="flex flex-col">
+                      <span
+                        class="line-clamp-2 text-sm font-semibold text-gray-900"
+                        >Clint Tremblay</span
+                      >
+                      <span class="line-clamp-1 text-xs text-gray-500"
+                        >234234534534</span
+                      >
+                    </span>
+                  </span>
+                  <!-- ./ Left -->
+
+                  <!-- Right -->
+                  <span class="flex flex-shrink-0 items-center gap-2">
+                    <span
+                      class="i-material-symbols-chevron-right-rounded text-icon-md text-gray-900"
+                    ></span>
+                  </span>
+                  <!-- ./ Right -->
+                </a>
+                <div
+                  class="my-2.5 flex gap-4 whitespace-nowrap px-5 last:hidden"
+                >
+                  <div class="flex-grow-1 h-[1px] w-full bg-gray-300"></div>
+                </div>
+                <!-- ./ Items -->
+              </div>
+            </div>
+            <!-- Section: Search Contact -->
+
+            <!-- Section: Input Nominal -->
+            <div id="modal-content-input-nominal" class="hidden">
+              <form action="#" method="POST" class="flex w-full flex-col gap-4">
+                <div class="flex justify-between">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="../assets/images/logo-green.svg"
+                      alt="logo"
+                      class="h-5"
+                    />
+                    <div class="flex items-center gap-2 text-xs font-medium">
+                      <span>Jane Dane</span>
+                      <span
+                        class="i-material-symbols-circle text-[4px] text-gray-500"
+                      ></span>
+                      <span>212121091210</span>
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="text-sm font-semibold text-brands-light-green hover:text-brands-light-green/70 focus:outline-none focus:ring-2 focus:ring-green-400"
+                    onclick="showSearchContact()"
+                    >Cari Kontak</a
+                  >
+                </div>
+
+                <!-- Input + Button -->
+                <div>
+                  <div class="relative">
+                    <input
+                      type="number"
+                      inputmode="numeric"
+                      class="peer w-full rounded-2xl border border-gray-400 p-3 pe-12 text-sm text-gray-900 placeholder:text-gray-400 invalid:bg-rose-200 invalid:text-red-900 invalid:caret-red-900 focus:outline-none focus:ring-2 focus:ring-green-400 focus:invalid:ring-red-900 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-100"
+                      placeholder="Nominal Rupiah"
+                    />
+
+                    <div
+                      class="absolute inset-y-0 end-0 flex items-center pe-4 text-icon-md text-gray-400 peer-invalid:text-red-400 peer-invalid:peer-focus:text-red-900"
+                    >
+                      <span
+                        class="i-material-symbols-search-rounded text-icon-md"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="inline-flex items-center justify-center gap-2 rounded-xl bg-brands-light-green p-2 text-xs font-semibold uppercase text-white hover:bg-brands-dark-green focus:outline-none focus:ring-2 focus:ring-green-400 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-400"
+                >
+                  <span
+                    class="i-material-symbols-send-rounded text-icon-sm"
+                  ></span>
+                  <span>Lanjut Kirim</span>
+                </button>
+                <!-- ./ Input + Button -->
+              </form>
+            </div>
+            <!-- Section: Input Nominal -->
+          </div>
+          <!-- ./ Form Top Up -->
+        </div>
+      </dialog>
+      <!-- ./ Modal Transfer -->
     </div>
+
+    <script src="../assets//js/main.js"></script>
   </body>
 </html>

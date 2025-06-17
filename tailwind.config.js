@@ -1,7 +1,7 @@
 import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons';
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./dist/**/*.{html,js}'],
   theme: {
     container: {
@@ -9,8 +9,8 @@ export default {
     },
     extend: {
       animation: {
-        'slide-top': '.5s cubic-bezier(.57,.14,0,1.07) both',
-        'slide-bottom': '1s cubic-bezier(.57,.14,0,1.07) both',
+        'slide-top': 'slide-top .5s cubic-bezier(.57,.14,0,1.07) both',
+        'slide-bottom': 'slide-bottom 1s cubic-bezier(.57,.14,0,1.07) both',
       },
       keyframes: {
         'slide-top': {
